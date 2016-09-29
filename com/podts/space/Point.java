@@ -1,7 +1,7 @@
 package com.podts.space;
 
-public interface Point {
+public interface Point extends Spacial {
 	
-	public Space getSpace();
+	
 	
 }
