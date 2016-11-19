@@ -1,4 +1,4 @@
-package com.podts.space;
+package com.podts.podspace;
 
 import java.util.Set;
 

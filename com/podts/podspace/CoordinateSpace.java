@@ -1,12 +1,14 @@
-package com.podts.space;
+package com.podts.podspace;
+
+import java.util.List;
 
 /**
 A Space that is backed internally by a specific coordinate system.
 */
 public interface CoordinateSpace extends Space {
 	
-	public final List<Vector> getBasis(Point p);
+	public List<Vector> getBasis(Point p);
 	
-	public final Point getOrigin();
+	public Point getOrigin();
 	
 }
