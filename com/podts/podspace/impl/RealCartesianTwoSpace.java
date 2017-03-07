@@ -30,7 +30,7 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 	
 	private static class RealTwoVector implements Vector {
 		
-		private final Direction dir;
+		private final RealTwoDirection dir;
 		private final double length;
 		
 		@Override
@@ -43,7 +43,7 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 			return length;
 		}
 		
-		public RealTwoVector(Direction dir, double length) {
+		public RealTwoVector(RealTwoDirection dir, double length) {
 			this.dir = dir;
 			this.length = length;
 		}
@@ -57,7 +57,7 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 	
 	private static class RealTwoDirection implements Direction {
 		
-		private double x,y;
+		protected double x,y;
 		
 		public RealTwoDirection(double x, double y) {
 			this.x = x;
@@ -90,6 +90,15 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 	@Override
 	public final Point getOrigin() {
 		return origin;
+	}
+
+	@Override
+	public Point getRelative(Point point, Vector vector) {
+		if(point == null || vector == null) throw new NullPointerException();
+		if(point.getSpace() != this) throw new IllegalArgumentException();
+		RealTwoPoint start = (RealTwoPoint) point;
+		RealTwoVector v = (RealTwoVector) vector;
+		return new RealTwoPoint(start.x + v.dir.x*v.length, start.y + v.dir.y*v.length);
 	}
 
 }

@@ -4,4 +4,6 @@ public interface Space {
 	
 	public int getDimensions();
 	
+	public Point getRelative(Point point, Vector vector);
+	
 }
