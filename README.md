@@ -1,2 +1,2 @@
 # PodSpace
-An abstract library that manages spacial relations.
+An abstract library that manages spatial relations.

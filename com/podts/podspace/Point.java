@@ -1,6 +1,6 @@
 package com.podts.podspace;
 
-public interface Point extends Spacial {
+public interface Point extends Spatial {
 	
 	
 	

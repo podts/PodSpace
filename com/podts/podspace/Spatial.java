@@ -1,6 +1,6 @@
 package com.podts.podspace;
 
-public interface Spacial {
+public interface Spatial {
 	
 	public Space getSpace();
 	
