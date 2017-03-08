@@ -127,7 +127,7 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 	}
 
 	@Override
-	public Point transport(final Point point, final Vector vector) {
+	public RealTwoPoint transport(final Point point, final Vector vector) {
 		if(point == null || vector == null) throw new NullPointerException();
 		if(point.getSpace() != this) throw new IllegalArgumentException();
 		RealTwoPoint start = (RealTwoPoint) point;
@@ -136,7 +136,7 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 	}
 
 	@Override
-	public Path getPath(final Point a, final Point b) {
+	public RealTwoPath getPath(final Point a, final Point b) {
 		if(a == null || b == null) throw new NullPointerException();
 		if(a.getSpace() != this || b.getSpace() != this) throw new IllegalArgumentException();
 		return new RealTwoPath((RealTwoPoint)a,(RealTwoPoint)b);
