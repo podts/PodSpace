@@ -69,13 +69,13 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 	
 	private class RealTwoPath implements Path {
 		
-		private final RealTwoPoint start, finish;
+		private final RealTwoPoint start;
 		private final double distance;
-		private final Vector relative;
+		private final RealTwoVector relative;
 		
 		@Override
 		public Point getPoint(double distance) {
-			return null;
+			return new RealTwoPoint(start.x + relative.dir.x*distance, start.y + relative.dir.y*distance);
 		}
 		
 		@Override
@@ -90,7 +90,6 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 		
 		RealTwoPath(final RealTwoPoint start, final RealTwoPoint finish) {
 			this.start = start;
-			this.finish = finish;
 			distance = distance(start,finish);
 			relative = new RealTwoVector(finish.x-start.x,finish.y-start.y);
 		}
