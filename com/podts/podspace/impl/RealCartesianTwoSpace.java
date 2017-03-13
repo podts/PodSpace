@@ -139,6 +139,15 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 		public Space getSpace() {
 			return RealCartesianTwoSpace.this;
 		}
+
+		@Override
+		public Point getPoint(double[] coordinates) {
+			if(coordinates == null) return origin;
+			if(coordinates.length != getDimensions())
+				throw  new IllegalArgumentException("Invalid number of dimensions, requires "
+						+ getDimensions() + " but recieved " + coordinates.length);
+			return new RealTwoPoint(coordinates[0],coordinates[1]);
+		}
 		
 	}
 
