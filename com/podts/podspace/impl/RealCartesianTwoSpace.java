@@ -161,7 +161,7 @@ public class RealCartesianTwoSpace implements CoordinateSpace {
 		}
 
 		@Override
-		public Point getPoint(final double[] coordinates) {
+		public Point getPoint(final double... coordinates) {
 			if(coordinates == null) return origin;
 			if(coordinates.length != getDimensions())
 				throw  new IllegalArgumentException("Invalid number of dimensions, requires "
